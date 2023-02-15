@@ -1,0 +1,325 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.4rem;
+	min-height: 100vh;
+	background-image: linear-gradient(131deg, #09c6f9 0%, #045de9 60%);
+	color: #000;
+}
+
+@mixin button-decorated {
+	position: relative;
+	margin: 0.4em 0;
+	padding: 0.5em 2em;
+	background: none;
+	border: 3px solid #fff;
+	border-radius: 8px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 1px 1px 3px rgb(38 43 194);
+	transition: border 0.3s;
+	cursor: pointer;
+}
+
+@mixin button-option {
+	content: '';
+	position: absolute;
+}
+@mixin button-after-hover {
+	border-bottom: 5px solid #13bb4b;
+	border-right: 5px solid #13bb4b;
+	border-radius: 5px;
+}
+@mixin button-before-hover {
+	border-top: 5px solid #13bb4b;
+	border-left: 5px solid #13bb4b;
+	border-radius: 5px;
+}
+
+.read-more {
+	display: flex;
+	flex-direction: column;
+	font-size: 2.4rem;
+	transition: opacity 0.6s, height 0.4s;
+	height: 0;
+	opacity: 0;
+}
+
+.read-more--show {
+	display: flex;
+	flex-direction: column;
+	font-size: 2.4rem;
+	height: 100px;
+	opacity: 1;
+}
+
+.weather {
+	padding: 1em 1.2em;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&__time {
+			font-size: 3rem;
+		}
+	}
+
+	&__title {
+		margin-top: 0.2em;
+		text-align: center;
+	}
+	&__state {
+		font-size: 1.8rem;
+		text-align: center;
+	}
+
+	&__img {
+		max-width: 300px;
+		height: 170px;
+		margin: 0 auto;
+	}
+
+	&-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&__temperature {
+			font-size: 2.8rem;
+		}
+
+		&__btn {
+			position: relative;
+			margin: 0.4em 0;
+			padding: 0.5em 2em;
+			background: none;
+			border: 3px solid #fff;
+			border-radius: 8px;
+			font-size: 1.8rem;
+			font-weight: bold;
+			color: #fff;
+			text-shadow: 1px 1px 3px rgb(38 43 194);
+			transition: border 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				border: 3px solid transparent;
+			}
+
+			&::before,
+			&::after {
+				width: 100%;
+				height: 100%;
+				transition: top 0.5s, left 0.5s, bottom 0.5s, right 0.5s, border 0.5s;
+				@include button-option;
+			}
+
+			&::before {
+				top: 0;
+				left: 0;
+			}
+			&::after {
+				bottom: 0;
+				right: 0;
+			}
+
+			&:hover::after {
+				bottom: -10px;
+				right: -10px;
+				@include button-after-hover;
+			}
+			&:hover::before {
+				top: -10px;
+				left: -10px;
+				@include button-before-hover;
+			}
+		}
+	}
+
+	&-main {
+		display: flex;
+		justify-content: space-evenly;
+		margin: 1em 0;
+
+		&-box {
+			&__input {
+				display: block;
+				max-width: 190px;
+				background: none;
+				border: none;
+				border-bottom: 3px solid #000;
+				font-size: 2rem;
+				font-weight: bold;
+				padding: 0.4em 0.6em;
+				padding-bottom: 0.2em;
+
+				&:focus {
+					border: 3px solid #fff;
+					border-radius: 8px;
+					outline: none;
+				}
+				&::placeholder {
+					color: #fff;
+				}
+			}
+
+			&__warming {
+				font-size: 1.8rem;
+				color: red;
+				text-shadow: 1px 1px 3px rgb(38 43 194);
+			}
+		}
+
+		&__btn {
+			position: relative;
+			padding: 0.4em 0.6em;
+			background: none;
+			font-size: 2rem;
+			color: #fff;
+			border: 3px solid #fff;
+			border-radius: 8px;
+			background-color: #0000005e;
+			transition: border 0.3s, background 0.2s;
+			cursor: pointer;
+
+			&:hover {
+				border: 3px solid transparent;
+				background: none;
+			}
+
+			&::before,
+			&::after {
+				width: 100%;
+				height: 100%;
+				transition: top 0.5s, left 0.5s, bottom 0.5s, right 0.5s, border 0.5s;
+				@include button-option;
+			}
+
+			&::before {
+				top: 0;
+				left: 0;
+			}
+			&::after {
+				bottom: 0;
+				right: 0;
+			}
+
+			&:hover::after {
+				bottom: -10px;
+				right: -10px;
+				@include button-after-hover;
+			}
+			&:hover::before {
+				top: -10px;
+				left: -10px;
+				@include button-before-hover;
+			}
+		}
+	}
+
+	&-bottom {
+		&__title {
+			text-align: center;
+			margin-bottom: 0.4em;
+
+			&--aftertomorrow {
+				margin-top: 1em;
+			}
+		}
+
+		&-boxes {
+			display: flex;
+			justify-content: center;
+			margin: 0 auto;
+
+			.weather-bottom-box {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				font-size: 2.6rem;
+				margin-bottom: 0.4em;
+
+				&--third {
+					border-left: 2px dashed #000;
+					border-right: 2px dashed #000;
+				}
+
+				&__time {
+					margin-bottom: 0.2em;
+				}
+				&__img {
+					width: 110px;
+					height: 80px;
+				}
+
+				&__temperature {
+					margin-bottom: 0.2em;
+					font-size: 3rem;
+				}
+			}
+		}
+
+		&__info {
+			text-align: center;
+		}
+	}
+}
+
+.footer {
+	border-top: 3px dashed;
+	background-color: #2e2e2e;
+	color: #dddddd;
+
+	&__info {
+		text-align: center;
+		padding: 0.6em 0;
+
+		&--show {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.weather {
+		max-width: 600px;
+		margin: 0 auto;
+		font-size: 3rem;
+
+		&-bottom {
+			&__info {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.footer__info {
+		&--show {
+			display: inline;
+		}
+		&--hide {
+			display: none;
+		}
+	}
+}

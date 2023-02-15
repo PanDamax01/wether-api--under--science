@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Api</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <section class="weather">
+            <div class="weather-header">
+                <span class="weather-header__time time"></span>
+                <span class="weather-header__today today"></span>
+            </div>
+            <h1 class="weather__title"></h1>
+            <span class="weather__state state">Zachmurzenie</span>
+            <img src="" alt="Ikona aktualnego stanu pogody" class="weather__img">
+            <div class="weather-info">
+                <span class="weather-info__temperature temperature"></span>
+                <!-- pozniej zmienie na inne klasy -->
+                <div class="read-more">
+                    <span class="cloudiness"></span>
+                    <span class="windy-speed"></span>
+                    <span class="precipitition"></span>
+                </div>
+
+                <!-- pozniej zmienie na inne klasy -->
+                <button class="weather-info__btn read-more-btn">Pokaż więcej</button>
+            </div>
+            <div class="weather-main">
+                <div class="weather-main-box">
+                    <input type="text" placeholder="Wpisz nazwę..." class="weather-main-box__input input">
+                    <p class="weather-main-box__warming warning"> </p>
+                </div>
+                <button class="weather-main__btn button">Wyślij</button>
+
+            </div>
+            <div class="weather-bottom">
+                <h3 class="weather-bottom__title">Jutro</h3>
+
+                <div class="weather-bottom-boxes">
+                    <div class="weather-bottom-box ">
+                        <span class="weather-bottom-box__time">06:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-tomorrow-six__img">
+                        <span class="weather-bottom-box__temperature  temperature-tomorrow-six"></span>
+                        <span class="precipitition-tomorrow-six"></span>
+                    </div>
+                    <div class="weather-bottom-box weather-bottom-box--third">
+                        <span class="weather-bottom-box__time">12:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-tomorrow-twelve__img">
+                        <span class="weather-bottom-box__temperature temperature-tomorrow-twelve"></span>
+                        <span class="precipitition-tomorrow-twelve"></span>
+                    </div>
+                    <div class="weather-bottom-box">
+                        <span class="weather-bottom-box__time">18:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-tomorrow-eighteen__img">
+                        <span class="weather-bottom-box__temperature temperature-tomorrow-eighteen"></span>
+                        <span class="precipitition-tomorrow-eighteen"></span>
+                    </div>
+                </div>
+                <span class="weather-bottom__info">💧 --> szansa na opady</span>
+                <h3 class="weather-bottom__title weather-bottom__title--aftertomorrow">Pojutrze</h3>
+
+                <div class="weather-bottom-boxes">
+                    <div class="weather-bottom-box ">
+                        <span class="weather-bottom-box__time">06:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-aftertomorrow-six__img">
+                        <span class="weather-bottom-box__temperature  temperature-aftertomorrow-six"></span>
+                        <span class="precipitition-aftertomorrow-six"></span>
+                    </div>
+                    <div class="weather-bottom-box weather-bottom-box--third">
+                        <span class="weather-bottom-box__time">12:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-aftertomorrow-twelve__img">
+                        <span class="weather-bottom-box__temperature temperature-aftertomorrow-twelve"></span>
+                        <span class="precipitition-aftertomorrow-twelve"></span>
+                    </div>
+                    <div class="weather-bottom-box">
+                        <span class="weather-bottom-box__time">18:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-aftertomorrow-eighteen__img">
+                        <span class="weather-bottom-box__temperature temperature-aftertomorrow-eighteen"></span>
+                        <span class="precipitition-aftertomorrow-eighteen"></span>
+                    </div>
+                </div>
+
+                <h3 class="weather-bottom__title new-title"></h3>
+                <div class="weather-bottom-boxes">
+                    <div class="weather-bottom-box ">
+                        <span class="weather-bottom-box__time">06:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-data-six__img">
+                        <span class="weather-bottom-box__temperature  temperature-data-six"></span>
+                        <span class="precipitition-data-six"></span>
+                    </div>
+                    <div class="weather-bottom-box weather-bottom-box--third">
+                        <span class="weather-bottom-box__time">12:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-data-twelve__img">
+                        <span class="weather-bottom-box__temperature temperature-data-twelve"></span>
+                        <span class="precipitition-data-twelve"></span>
+                    </div>
+                    <div class="weather-bottom-box">
+                        <span class="weather-bottom-box__time">18:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-data-eighteen__img">
+                        <span class="weather-bottom-box__temperature temperature-data-eighteen"></span>
+                        <span class="precipitition-data-eighteen"></span>
+                    </div>
+                </div>
+                <h3 class="weather-bottom__title newtwo-title"></h3>
+                <div class="weather-bottom-boxes">
+                    <div class="weather-bottom-box ">
+                        <span class="weather-bottom-box__time">06:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-datatwo-six__img">
+                        <span class="weather-bottom-box__temperature  temperature-datatwo-six"></span>
+                        <span class="precipitition-datatwo-six"></span>
+                    </div>
+                    <div class="weather-bottom-box weather-bottom-box--third">
+                        <span class="weather-bottom-box__time">12:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-datatwo-twelve__img">
+                        <span class="weather-bottom-box__temperature temperature-datatwo-twelve"></span>
+                        <span class="precipitition-datatwo-twelve"></span>
+                    </div>
+                    <div class="weather-bottom-box">
+                        <span class="weather-bottom-box__time">18:00</span>
+                        <img src="" alt="Ikona przestawiajaca aktualny stan pogody"
+                            class="weather-bottom-box__img weather-datatwo-eighteen__img">
+                        <span class="weather-bottom-box__temperature temperature-datatwo-eighteen"></span>
+                        <span class="precipitition-datatwo-eighteen"></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__info">By <span class="footer__info--show">Pandamax</span><span
+                class="footer__info--hide">Karol</span> 2023-02-14</p>
+    </footer>
+
+    <script src="clock.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
